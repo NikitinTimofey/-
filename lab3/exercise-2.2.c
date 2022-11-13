@@ -15,12 +15,16 @@ bool isPrime(int n)
         return false;
 }
 int main() {
-	int n;
-	printf()
-	"%d\t%d\t%d\n", ((n/100)%10), ((n/10)%10), (n%10);
-	
-	
-	
+	int n, m;
+	printf("Enter a lower limit:");
+	scanf("%d", &m);
+	printf("Enter the upper limit:");
 	scanf("%d", &n);
-	printf("Is prime: %d\n", isPrime(n));	
+	printf("Is prime: %d\n", isPrime(n));
+	while (m<n) {
+		m++;
+		printf("%d\n", m);
+	}
+	if 
+	
 }
