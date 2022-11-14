@@ -19,11 +19,11 @@ int main(int argc, char** argv) {
  scanf("%f",&z); 
   
  q=2*cos(x-2/3.0); 
-  
+ 
  w=1/2.0+sin(y)*sin(y); 
  e=pow(z,2); 
  r=3-pow(z,2)/5.0; 
-  
+ 
  s=(q/w)*(1+(e/r)); 
   
  printf("Результат: %0.4f", s); 
