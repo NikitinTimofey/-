@@ -1,19 +1,14 @@
+#include <conio.h>
 #include <stdio.h>
- 
-int main()
-{
-    int N;
-    printf("Enter N: ");
-    scanf("%d", &N);
-    int arr[N], i, j, count=0;
-    for(i=0; i<N; i++) scanf("%d", &arr[i]);
-    for(i=0; i<N-1; i++)
-    {
-        for(j=i+1; j<N; j++)
-        {
-            if(arr[i]>arr[j]) count+=1;
-        }
-    }
-    printf("Number of inversions in the array = %d", count);
-    return 0;
+
+void main() {
+	int n;
+	printf("Enter the amount of array elements: ");
+	scanf("%d", &n);	
+	int arr[n], i, j, s;
+	printf("Enter the numbers:\n");
+	for (i=0; i<n; i++) scanf("%d", &arr[i]);
+	for (i=0; i<n; i++) if (arr[i] < arr[i-1]) s++;
+	printf("Number of inversions = %d", s);
+	getch();
 }
