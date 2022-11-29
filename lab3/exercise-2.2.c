@@ -17,22 +17,11 @@ bool isPrime(int m)
 }
 
 int main() {
-	int m, n, a, b;
+	int m, n, a, b, c;
 
 	for (int m = 100; m <= 999; m++) {
-		
-		#include <stdio.h>
-
-int main() {
-	int m, a, b, c;
-	m=256;	
-
-	a = m % 10;
-	printf("a=%d", a);
-	b = m / 10 % 10;
-	printf("\nb=%d", b);
-	c = m / 100 % 10;
-	printf("\nc=%d", c);		
-	}
-		
+		a = m % 10;
+		b = m / 10 % 10;
+		c = m / 100 % 10;
+    }
 }
