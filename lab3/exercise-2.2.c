@@ -1,35 +1,30 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 
-bool isPrime(int m)
+bool isPrime(int s)
 {
-    if (m>1)
-    {
-        for (int i = 2; i < m; i++)
-            if (m % i == 0)
+        for (int i = 2; i < s; i++)
+            if (s % i == 0) 
                 return false;
-
+ 
         return true;
-    }
-    
 }
 
-int main() {
+
+int main()
+{
+    int n, m, s, a, b, c;
     
-	int m, n, a, b, c;
-	
-	if (true) {
-	    
-	        for (int m = 100; m <= 999; m++) {
-	            
-		    a = m % 10;
-		    b = m / 10 % 10;
-		    c = m / 100 % 10;
-
-            printf("%d %d %d\n", c,b,a);
-		
-        	}
-	}
-
+    for (int m = 100; m <= 999; m++) {
+        
+        s = sqrt(m);
+        
+	c = m % 10;
+    	b = m / 10 % 10;
+    	a = m / 100 % 10;
+        
+        if (s*s==m && isPrime(s) == true && c>b && b>a)
+            printf("%d\n", s*s);
+    }
 }
