@@ -3,12 +3,13 @@
 void main()
 {
 	int a,b,c;
-	b=10000*0.03;
+	a=10000;
 	c=0;
 	
 	printf("Primary amount - 10000 RUB.\n");
-	while(a<=20000) {
-		a+=b;
+	while (a <= 20000) {
+	    b=a*0.03;
+		a=a+b;
 		c++;
 	}
 	printf("After ");
