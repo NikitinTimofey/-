@@ -1,44 +1,62 @@
-#include <stdio.h> 
-#include <time.h> 
-#include <stdlib.h> 
-#define n 10 
-int main () 
-{ 
-  int a[n], i, sum, s=0, j, m; 
-   
-  srand(time (NULL)); 
-   
-  for (i=0; i<n; i++) 
-   a[i]=rand()%10; 
-   printf ("\n"); 
-   
-  for (i=0; i<n; i++) 
-   printf ("%d ",a[i]); 
-  
- for (i=0; i<n; i++) 
-  if (a[i]<1) 
-   s++;  
- // Минимальный элемент  
- int min=a[0]; 
- 
- for (int i=0; i<n; i++) 
-  if (a[i] < min) 
-         min = a[i];  
-// Упорядочивание элементов 
-// if (a[i]=min) 
-//  sum =  
-  
-  // Сумма элементов матрицы 
-  float q=0; 
-   for (i=0;i<n;i++) 
-    q+=a[i];  
-     
-   printf("\n\nSum of matrix elements = %.2f\n", q); 
-  
- printf("\nNumber of elements equal to 0: %d", s); 
- printf("\nmin: %d", min); 
-   
-  getchar(); 
-   
-return (0); 
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+
+    int b[4][4] = {
+        {1, -2, -7, 6},
+        {3, 5, 0, -1},
+        {4, -6, -1, -2},
+        {-5, -7, 2, 4}};
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            printf(" %d", b[i][j]);
+        }
+        printf("\n");
+    }
+
+    int p = 0, q = 0;
+    int a[4];
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (b[i][j] % 2 == 0 && b[i][j] < 0)
+            {
+                p += b[i][j];
+            }
+        }
+        a[q] = p;
+        q++;
+        p %= p;
+    }
+
+    printf("\nCharacteristic of the matrix: ");
+    for (int i = 0; i < 4; i++)
+    {
+        printf("\n%d", a[i]);
+    }
+
+    // Сортировка
+
+    for (int i = 0; i < 4 - 1; i++)
+    {
+        for (int j = (4 - 1); j > i; j--)
+        {
+            if (a[j - 1] < a[j]) 
+            {
+            int temp = a[j - 1];
+            a[j - 1] = a[j];
+            a[j] = temp;
+            }
+        }
+    }
+
+    printf("\nCharacteristic of the matrix row in a decreasing order: ");
+    for (int i = 0; i < 4; i++)
+        printf("\n%d ", a[i]);
 }
