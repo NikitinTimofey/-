@@ -59,18 +59,29 @@ void doSortCoworkersList() {
 			}
 		}
 	}
+	
+	
 }
 
-void doOutputCoworkersList() {
-	for (int i = 0; i < k; i++) {
-		printf("\n\n");
-		printf("Name: %s\n", co[i].name);
-		printf("Surname: %s\n", co[i].surname);
-		printf("Middle name: %s\n", co[i].middle_name);
-		printf("Job title: %s\n", co[i].job_title);
-		printf("Birth year: %d\n", co[i].birth_year);
-		printf("Salary: %d\n", co[i].salary);
+void doOutputCoworkersList() {	
+	
+		for (int i = 0; i < k; i++) {
+			printf("\n\n");
+			printf("Name: %s\n", co[i].name);
+			printf("Surname: %s\n", co[i].surname);
+			printf("Middle name: %s\n", co[i].middle_name);
+			printf("Job title: %s\n", co[i].job_title);
+			printf("Birth year: %d\n", co[i].birth_year);
+			printf("Salary: %d\n", co[i].salary);
+		}
+	
+	printf("\nEnter 0 to return: ");
+	int i;
+	scanf("%d", &i);
+	if (i == 0) {
+		return;
 	}
+	
 }
 
 void doFindCoworker() {
@@ -97,6 +108,14 @@ void doFindCoworker() {
 		printf("\n\n");
 		printf("Coworker with name %s not found!\n", searchName);
 	}
+	
+	printf("\nEnter 0 to return: ");
+	int i;
+	scanf("%d", &i);
+	if (i == 0) {
+		return;
+	}
+	
 }
 
 void doEditCoworker() {
