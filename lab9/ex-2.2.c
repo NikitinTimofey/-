@@ -19,19 +19,14 @@ struct Coworker co[100], num;
 int k = 0;
 
 
-
-
-
-
-
 void writeCoworkersToFile(const char* filename) {
 	FILE* file = fopen(filename, "wb");
 	if (file == NULL) {
 		printf("Error: can't open file for writing\n");
 		return;
 	}
-	fwrite(&k, sizeof(k), 1, file); // write the number of coworkers to the file
-	fwrite(co, sizeof(co), k, file); // write the array of coworkers to the file
+	fwrite(&k, sizeof(k), 1, file); 
+	fwrite(co, sizeof(co), k, file);
 	fclose(file);
 }
 
@@ -43,17 +38,10 @@ void readCoworkersFromFile(const char* filename) {
 		printf("Error: can't open file for reading\n");
 		return;
 	}
-	fread(&k, sizeof(k), 1, file); // read the number of coworkers from the file
-	fread(co, sizeof(co), k, file); // read the array of coworkers from the file
+	fread(&k, sizeof(k), 1, file);
+	fread(co, sizeof(co), k, file);
 	fclose(file);
 }
-
-
-
-
-
-
-
 
 
 void Break() {
@@ -162,6 +150,13 @@ void doFindCoworker() {
 }
 
 void doEditCoworker() {
+	
+	FILE* file = fopen(FILENAME, "wb");
+	if (file == NULL) {
+		printf("Error: can't open file for writing\n");
+		return;
+	}
+	
 	char searchName[20];
 	printf("Enter the name of the coworker you want to edit: ");
 	scanf("%s", searchName);
@@ -199,9 +194,21 @@ void doEditCoworker() {
 		printf("\n\n");
 		printf("Coworker with name %s not found!\n", searchName);
 	}
+	
+	fwrite(&k, sizeof(k), 1, file); 
+	fwrite(co, sizeof(co), k, file);
+	fclose(file);
 }
 
 void doRemoveCoworker() {
+	
+	
+	FILE* file = fopen(FILENAME, "wb");
+	if (file == NULL) {
+		printf("Error: can't open file for reading\n");
+		return;
+	}
+	
 	system("cls");
 	printf("Enter the name of the coworker you want to remove: ");
 	char name[20];
@@ -225,6 +232,10 @@ void doRemoveCoworker() {
 	}
 	k--;
 	printf("Coworker removed successfully.\n");
+	
+	fread(&k, sizeof(k), 1, file);
+	fread(co, sizeof(co), k, file);
+	fclose(file);
 }
 
 void doExit() {
