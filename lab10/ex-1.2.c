@@ -26,6 +26,15 @@ int main() {
         }
     }
 
+    printf("\n");
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n + 1; j++) {
+            printf("%lf ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
     for (i = n - 1; i >= 0; i--) {
         x[i] = arr[i][n] / arr[i][i];
         for (int c = n - 1; c > i; c--) {
